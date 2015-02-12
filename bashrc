@@ -84,6 +84,7 @@ fi
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
+alias lt='ls -tl'
 alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -112,21 +113,26 @@ fi
 export PATH=$PATH:/home/max/toolchain/arm-eabi-4.7/bin
 
 #adb related alias
-alias art='adb wait-for-device reboot'
-alias artb='adb wait-for-device reboot bootloader'
+alias ar='adb wait-for-device reboot'
+alias arb='adb wait-for-device reboot bootloader'
+alias arf='adb wait-for-device reboot ftm'
+alias ard='adb wait-for-device reboot download'
 alias aw='adb wait-for-device shell'
-alias adbl='adb logcat'
+alias ad='adb wait-for-device shell dmesg'
+alias al='adb logcat'
+alias ai='adb wait-for-device shell cat /proc/interrupts'
 alias adbg='adb wait-for-device shell getevent'
-alias adbk='adb wait-for-device shell cat /proc/kmsg'
+alias awk='adb wait-for-device shell cat /proc/kmsg'
+alias awd='adb wait-for-device shell dmesg'
 alias ch='~/bin/checkpatch.pl --no-tree'
 alias chp='git diff > check.patch; ~/bin/checkpatch.pl --no-tree check.patch'
-alias ftimg='fastboot flash zimage arch/arm/boot/zImage reboot'
-alias fthb='fastboot flash hboot out/hboot.nb0 reboot'
 alias ftzip='fastboot flash zip'
-alias ftdv='fastboot devices'
+alias fbt='fastboot flash boot'
+alias fat='fastboot flash aboot'
+alias fdv='fastboot devices'
 alias ftruu='fastboot oem rebootRUU'
-alias ftrt='fastboot reboot'
-alias ftrtb='fastboot reboot-bootloader'
+alias frt='fastboot reboot'
+alias frb='fastboot reboot-bootloader'
 alias adbimg='artb;ftimg'
 alias ls='ls --color=auto'
 alias tslog='adb wait-for-device shell cat /proc/kmsg | grep ts'
